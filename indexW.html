@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Travel Website</title>
+
+<style>
+
+html{
+  scroll-behavior: smooth;
+}
+
+body{
+  margin:0;
+  font-family: Arial;
+}
+.navbar{
+  position: fixed;
+  width: 100%;
+  height:60px;
+  background: rgba(0,0,0,0.8);
+  text-align: center;
+  line-height:60px;
+  z-index:1000;
+}
+
+.navbar a{
+  color: white;
+  margin: 10px;
+  text-decoration: none;
+  padding:5px 10px;
+  transition:0.3s;
+}
+
+.navbar a:hover{
+  background: orange;
+  border-radius:5px;
+}
+
+.hero{
+  height:100vh;
+  background: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+              url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center;
+  background-size:cover;
+  background-attachment: fixed;
+  color:white;
+  text-align:center;
+  padding-top:200px;
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero button{
+  padding:10px 20px;
+  background:orange;
+  border:none;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.hero button:hover{
+  transform: scale(1.1);
+  background:red;
+}
+.section{
+  min-height:100vh;
+  color:white;
+  text-align:center;
+  padding-top:120px;
+  background-size:cover;
+  background-attachment: fixed;
+  position: relative;
+
+  scroll-margin-top:80px;
+
+  opacity:0;
+  transform: translateY(50px);
+  transition: 1s;
+}
+
+.section.show{
+  opacity:1;
+  transform: translateY(0);
+}
+
+.section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background: rgba(0,0,0,0.5);
+}
+
+.section h2, .section p{
+  position:relative;
+  z-index:1;
+}
+
+.cards{
+  margin-top:20px;
+}
+
+.card{
+  display:inline-block;
+  width:250px;
+  margin:10px;
+  background:white;
+  color:black;
+  border-radius:10px;
+  overflow:hidden;
+  transition:0.3s;
+}
+
+.card img{
+  width:100%;
+}
+.card:hover{
+  transform: scale(1.05);
+}
+#dest{ background:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') center/cover; }
+#pack{ background:url('https://images.unsplash.com/photo-1493558103817-58b2924bce98') center/cover; }
+#food{ background:url('https://images.unsplash.com/photo-1504674900247-0877df9cc836') center/cover; }
+#hotel{ background:url('https://images.unsplash.com/photo-1566073771259-6a8506099945') center/cover; }
+#adventure{ background:url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') center/cover; }
+#gallery{ background:url('https://images.unsplash.com/photo-1500534314209-a25ddb2bd429') center/cover; }
+#review{ background:url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac') center/cover; }
+#about{ background:url('https://images.unsplash.com/photo-1526772662000-3f88f10405ff') center/cover; }
+#contact{ background:url('https://images.unsplash.com/photo-1500534623283-312aade485b7') center/cover; }
+.footer{
+  background:black;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
+@media(max-width:600px){
+  .navbar a{
+    display:block;
+    margin:5px;
+    line-height:normal;
+  }
+}
+
+</style>
+</head>
+
+<body>
+<div class="navbar">
+  <a href="#home">Home</a>
+  <a href="#dest">Destinations</a>
+  <a href="#pack">Packages</a>
+  <a href="#food">Food</a>
+  <a href="#hotel">Hotels</a>
+  <a href="#adventure">Adventure</a>
+  <a href="#gallery">Gallery</a>
+  <a href="#review">Reviews</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</div>
+<div class="hero" id="home">
+  <h1>Explore the World 🌍</h1>
+  <p>Travel with us and enjoy your life</p>
+  <a href="#pack"><button>Book Now</button></a>
+</div>
+
+<!-- DESTINATIONS -->
+<div class="section" id="dest">
+  <h2>Destinations 🌍</h2>
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e" alt="Goa Beach">
+      <p>Goa Beach</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1491553895911-0055eca6402d" alt="Paris City">
+      <p>Paris City</p>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c" alt="Dubai Desert">
+      <p>Dubai Desert</p>
+    </div>
+  </div>
+</div>
+<div class="section" id="pack">
+  <h2>Packages 💰</h2>
+  <p>Basic ₹10,000 | Standard ₹20,000 | Premium ₹30,000</p>
+</div>
+
+<div class="section" id="food">
+  <h2>Food 🍔</h2>
+  <p>Enjoy local & international cuisine</p>
+</div>
+
+<div class="section" id="hotel">
+  <h2>Hotels 🏨</h2>
+  <p>Luxury and budget hotels available</p>
+</div>
+
+<div class="section" id="adventure">
+  <h2>Adventure 🚀</h2>
+  <p>Trekking, safari, water sports</p>
+</div>
+
+<div class="section" id="gallery">
+  <h2>Gallery 📸</h2>
+  <p>Beautiful travel memories</p>
+</div>
+
+<div class="section" id="review">
+  <h2>Reviews ⭐</h2>
+  <p>"Amazing experience!"</p>
+</div>
+
+<div class="section" id="about">
+  <h2>About Us</h2>
+  <p>We provide best travel services</p>
+</div>
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: travel@email.com</p>
+</div>
+<div class="footer">
+  <p>© Travel Website</p>
+</div>
+
+<script>
+let sections = document.querySelectorAll(".section");
+
+window.addEventListener("scroll", function(){
+  sections.forEach(function(sec){
+    let top = sec.getBoundingClientRect().top;
+    if(top < window.innerHeight - 100){
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
